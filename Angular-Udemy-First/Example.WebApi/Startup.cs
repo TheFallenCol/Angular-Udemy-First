@@ -1,5 +1,8 @@
 using Example.DataAccess;
 using Example.UnitOfWork;
+using Example.WebApi.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +26,25 @@ namespace Example.WebApi
             services.AddSingleton<IUnitOfWork>((option) => new ExampleUnitOfWork(
                 Configuration.GetConnectionString("Northwind")
                 ));
+
+            var tokenProvider = new JwtProvider("issuer","audience","ExampleJWTKeyName");
+            services.AddSingleton<ITokenProvider>(tokenProvider);
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = tokenProvider.GetValidationParameters();
+                });
+
+            services.AddAuthorization(auth =>
+            {
+                auth.DefaultPolicy = new AuthorizationPolicyBuilder()
+                    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+                    .RequireAuthenticatedUser()
+                    .Build();
+            });
+
             services.AddControllers();
         }
 
