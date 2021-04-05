@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\Example.DataAccess.csproj" />
+    <ProjectReference Include="..\Example.UnitOfWork\Example.UnitOfWork.csproj" />
+  </ItemGroup>
+
 
 </Project>

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Example.Repositories\Example.Repositories.csproj" />
+    <ProjectReference Include="..\Example.UnitOfWork\Example.UnitOfWork.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using Example.Repositories;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using Dapper.Contrib.Extensions;
-using Example.Repositories;
 
-namespace DataAccess
+namespace Example.DataAccess
 {
     public class Repository<T> : IRepository<T> where T : class
     {

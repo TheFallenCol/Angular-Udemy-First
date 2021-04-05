@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{74116D21-A71
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D5DA89CE-8217-4243-A7F6-6790B2B233D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Models", "Example.Models\Example.Models.csproj", "{8455ECD4-9DBF-4642-ABBA-CD4322C2ABCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Models", "Example.Models\Example.Models.csproj", "{8455ECD4-9DBF-4642-ABBA-CD4322C2ABCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.UnitOfWork", "Example.UnitOfWork\Example.UnitOfWork.csproj", "{18DDD287-5E00-4ADE-BEF0-A14A01620002}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.UnitOfWork", "Example.UnitOfWork\Example.UnitOfWork.csproj", "{18DDD287-5E00-4ADE-BEF0-A14A01620002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7775FCCE-A01C-411A-83D7-77CBDC5AE151}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.DataAccess", "DataAccess\Example.DataAccess.csproj", "{7775FCCE-A01C-411A-83D7-77CBDC5AE151}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Repositories", "Example.Repositories\Example.Repositories.csproj", "{15D088BC-884C-47AC-AD8A-71F7F61A5D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Repositories", "Example.Repositories\Example.Repositories.csproj", "{15D088BC-884C-47AC-AD8A-71F7F61A5D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.WebApi", "Example.WebApi\Example.WebApi.csproj", "{B7F33023-58A7-494E-9403-8868C28573D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.WebApi", "Example.WebApi\Example.WebApi.csproj", "{B7F33023-58A7-494E-9403-8868C28573D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

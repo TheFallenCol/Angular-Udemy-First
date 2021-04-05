@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using Dapper;
+﻿using Dapper;
 using Example.Models;
 using Example.Repositories;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
-namespace DataAccess
+namespace Example.DataAccess
 {
     public class CustomerRepository: Repository<Customer>, ICustomerRepository
     {
