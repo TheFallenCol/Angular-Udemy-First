@@ -348,3 +348,16 @@ BEGIN
  
 END
 go
+
+CREATE PROCEDURE [dbo].[SupplierPagedList]
+@page int,
+@rows int
+AS 
+BEGIN
+   SELECT Id, CompanyName, ContactName, ContactTitle, City, Country, Phone, Fax, COUNT(*) OVER() TotalRecords 
+   FROM Supplier 
+   ORDER BY Id
+   OFFSET @page - 1 ROWS
+   FETCH NEXT @rows ROWS ONLY
+END
+GO
