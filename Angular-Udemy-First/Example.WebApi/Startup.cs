@@ -1,6 +1,7 @@
 using Example.DataAccess;
 using Example.UnitOfWork;
 using Example.WebApi.Authentication;
+using Example.WebApi.GlobalErrorHandling;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -63,6 +64,8 @@ namespace Example.WebApi
             app.UseAuthorization();
 
             app.UseAuthentication();
+
+            app.ConfigureExceptionHandler();
 
             app.UseEndpoints(endpoints =>
             {
