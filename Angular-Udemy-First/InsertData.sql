@@ -3194,3 +3194,8 @@ INSERT INTO [OrderItem] ([Id],[OrderId],[ProductId],[UnitPrice],[Quantity])VALUE
 INSERT INTO [OrderItem] ([Id],[OrderId],[ProductId],[UnitPrice],[Quantity])VALUES(2154,830,75,7.75,4)
 INSERT INTO [OrderItem] ([Id],[OrderId],[ProductId],[UnitPrice],[Quantity])VALUES(2155,830,77,13.00,2)
 SET IDENTITY_INSERT [OrderItem] OFF
+
+INSERT INTO [User]
+VALUES('product','product','product','admin_product','product'),
+('supplier','supplier','supplier','admin_supplier','supplier')
+
