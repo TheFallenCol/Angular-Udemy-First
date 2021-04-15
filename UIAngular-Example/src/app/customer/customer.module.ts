@@ -1,13 +1,15 @@
+import { CustomerRoutingModule } from './customer-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 
 @NgModule({
   declarations: [
-    CustomerListComponent
+    CustomerListComponent,
+    SupplierComponent
   ],
   imports: [
     CommonModule,
