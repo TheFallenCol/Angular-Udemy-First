@@ -1,16 +1,18 @@
-import { HomeComponent } from './home/home/home.component';
-import { HomeModule } from './home/home.module';
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-   { path:'', component:HomeComponent },
-   { path:'**', component:HomeComponent }
+   { path:'home', loadChildren:'./home/home.module#HomeModule' },
+   { path:'customer', loadChildren:'./customer/customer.module#CustomerModule' },
+   { path:'', redirectTo:'home', pathMatch:'full' },
+   { path:'**', component:NotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
