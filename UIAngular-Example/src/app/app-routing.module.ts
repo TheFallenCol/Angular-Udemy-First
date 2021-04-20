@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -5,7 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
    { path:'home', loadChildren: () => import ('./home/home.module').then(m => m.HomeModule) },
    { path:'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
-   { path:'', redirectTo:'home', pathMatch:'full' },
+   { path:'login', component:LoginComponent },
+   { path:'', redirectTo:'/login', pathMatch:'full' },
    { path:'**', component:NotFoundComponent }
 ];
 
