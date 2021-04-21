@@ -4,14 +4,28 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      <img src="https://loremicon.com/drnd/40/40/17194995/png" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+    <form [formGroup]="loginFormGroup" (ngSubmit)="login(loginFormGroup)">
+      <div *ngIf="loginError">
+        <p class="login-error">{{loginErrorMessage}}</p>
+      </div>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="email">
+      <div *ngIf="email?.touched && email?.invalid" class="alert alert-danger">
+        <div *ngIf="email?.errors?.required">Campo Oblogatorio</div>
+        <div *ngIf="email?.errors?.email">Debe ser un correo electronico</div>
+      </div>
+
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+        <div *ngIf="password?.errors?.required">Campo Oblogatorio</div>
+        <div *ngIf="password?.errors?.minlength">Tamaño debe ser de dos o mas caracteres</div>
+        <div *ngIf="password?.errors?.maxlength">Tamaño debe ser menor de cinco caracteres</div>
+      </div>
+
+      <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="loginFormGroup.invalid">
     </form>
 
     <!-- Remind Passowrd -->
