@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UIAngular-Example';
+  _displayLogin: boolean = false;
+
+  get displayMenu(){
+    return this._displayLogin;
+  }
 }
