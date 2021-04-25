@@ -14,6 +14,8 @@ namespace Example.WebApi
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -46,6 +48,18 @@ namespace Example.WebApi
                     .Build();
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyMethod();
+                        builder.AllowAnyHeader();
+                    });
+            });
+
+
             services.AddControllers();
         }
 
@@ -64,6 +78,8 @@ namespace Example.WebApi
             app.UseAuthorization();
 
             app.UseAuthentication();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.ConfigureExceptionHandler();
 
