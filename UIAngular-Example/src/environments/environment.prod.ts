@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  tokenServiceDomain: 'https://localhost:44366/api/'
 };
