@@ -20,18 +20,18 @@ namespace Example.WebApi.Controllers
         }
 
         [HttpPost]
-        public JsonWebToken Post([FromBody]User userLogin)
+        public IActionResult Post([FromBody]User userLogin)
         {
             var user = _unitOfWork.User.ValidateUser(userLogin.Email, userLogin.Password);
             
             if (user == null)
-                throw new UnauthorizedAccessException();
+                return Unauthorized(new UnauthorizedAccessException());
 
-            return new JsonWebToken()
+            return Ok(new JsonWebToken()
             {
-                AccessToken = _tokenProvider.CreateToke(user,DateTime.UtcNow.AddHours(8)),
+                AccessToken = _tokenProvider.CreateToke(user, DateTime.UtcNow.AddHours(8)),
                 ExpiresIn = 480 //Minutos expiracion token
-            };
+            });
         }
     }
 }
