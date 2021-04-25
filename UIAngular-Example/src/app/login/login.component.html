@@ -18,7 +18,7 @@
         <div *ngIf="email?.errors?.email">Debe ser un correo electronico</div>
       </div>
 
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
       <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
         <div *ngIf="password?.errors?.required">Campo Oblogatorio</div>
         <div *ngIf="password?.errors?.minlength">Tamaño debe ser de dos o mas caracteres</div>
