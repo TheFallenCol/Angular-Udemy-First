@@ -72,6 +72,15 @@ export class AuthService extends CacheService {
     return this.getItem('jwt') || '';
   }
 
+  isValidToken(token: string){
+    try{
+      jwtDecode(token);
+      return true;
+    }catch(error){
+      return false;
+    }
+  }
+
   private clearToken(){
     this.removeItem('jwt');
   }
