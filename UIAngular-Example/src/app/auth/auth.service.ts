@@ -81,6 +81,10 @@ export class AuthService extends CacheService {
     }
   }
 
+  getAuthStatus(): IAuthStatus | null{
+    return this.getItem('authStatus');
+  }
+
   private clearToken(){
     this.removeItem('jwt');
   }
@@ -97,7 +101,7 @@ interface IServerAuthResponse{
 }
 
 const defaultAuthStatus : IAuthStatus = {
+  unique_name: '',
   role : Role.None,
-  primarysid: 0,
-  unique_name: ''
+  primarysid: 0
 }
