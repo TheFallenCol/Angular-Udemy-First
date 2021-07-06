@@ -343,7 +343,7 @@ BEGIN
  COUNT(*) OVER() TotalRecords
  FROM [Customer]
  order by [Id]
- OFFSET @page - 1 ROWS                  
+ OFFSET (@page - 1)*@rows ROWS                  
  FETCH NEXT @rows ROWS ONLY
  
 END
@@ -357,7 +357,7 @@ BEGIN
    SELECT Id, CompanyName, ContactName, ContactTitle, City, Country, Phone, Fax, COUNT(*) OVER() TotalRecords 
    FROM Supplier 
    ORDER BY Id
-   OFFSET @page - 1 ROWS
+   OFFSET (@page - 1)*@rows ROWS
    FETCH NEXT @rows ROWS ONLY
 END
 GO
