@@ -14,9 +14,9 @@ namespace Example.WebApi.Authentication
     {
         private readonly string _issuer;
         private readonly string _audience;
-        private RsaSecurityKey _key;
-        private string _algorithm;
-
+        private readonly string _algorithm;
+        private readonly RsaSecurityKey _key;
+        
         public JwtProvider(string issuer, string audience, string keyName)
         {
             var parameters = new CspParameters() { KeyContainerName = keyName };
