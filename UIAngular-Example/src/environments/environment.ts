@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  tokenServiceDomain: 'https://localhost:44366/api/'
+  tokenServiceDomain: 'https://localhost:44366/api/',
+  apiServiceDomainURL: 'https://localhost:44366/api/'
 };
 
 /*
